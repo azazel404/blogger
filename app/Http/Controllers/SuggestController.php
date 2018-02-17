@@ -83,9 +83,9 @@ class SuggestController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $suggests = Suggest::find($id)->update($request->all());
-
-        return redirect()->Route('index',['id' =>$id]);
+      	$suggests = Suggest::find($id)->update($request->all());
+		// kalau menggunakan route( harus pake name route bisa di cek ( php artisan route:list )
+        return redirect()->route('suggests.index');
       //   // return redirect()->to('suggests')->with(compact('suggests'));
     }
 
